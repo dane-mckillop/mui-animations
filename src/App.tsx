@@ -2,6 +2,7 @@ import { createTheme, CssBaseline, ThemeProvider } from '@mui/material';
 import { Route, Routes } from 'react-router-dom'
 import Home from './pages/Home';
 import Header from './components/Header';
+import CenteredDiv from './components/CenteredDiv';
 
 function App() {
 
@@ -12,7 +13,17 @@ function App() {
       },
       secondary: {
         main: '#edf2ff',
-      }
+      },
+    },
+    components: {
+      MuiBackdrop: {
+        styleOverrides: {
+          root: {
+            backgroundColor: 'rgba(0, 0, 0, 0.5)',
+            transition: 'opacity 300ms ease-in-out',
+          },
+        },
+      },
     },
   });
 
@@ -20,9 +31,11 @@ function App() {
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <Header />
-      <Routes>
-        <Route path={"/"} element={<Home/>}/>
-      </Routes>
+      <CenteredDiv>
+        <Routes>
+          <Route path={"/"} element={<Home />} />
+        </Routes>
+      </CenteredDiv>
     </ThemeProvider>
   )
 }

@@ -1,11 +1,12 @@
+import CustomModal from "../components/CustomModal"
 
 const Home = () => {
-
     return (
         <>
-            <p>
-                Placeholder
-            </p>
+            <CustomModal>
+                <h2>Modal Title</h2>
+                <p>This is a modal with a smooth overlay transition.</p>
+            </CustomModal>
         </>
     )
 }
